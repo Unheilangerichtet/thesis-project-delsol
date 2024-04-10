@@ -28,7 +28,7 @@
                 </div>
             </div>
             <div class="grid-item solution-box">
-                <button class="solution-button">SOLUTION</button>
+                <button @click="solutionFunction()" class="solution-button">SOLUTION</button>
             </div>
             <div class="grid-item guided-exercise-box">
                 <button class="guided-exercise-button">GUIDED EXERCISE</button>
@@ -67,6 +67,9 @@ export default {
                 this.toggleDropdown = false
             }
         },
+        solutionFunction() {
+            console.log("solutionFunction called!")
+        }
     }
 }
 </script>
