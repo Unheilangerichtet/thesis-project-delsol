@@ -9,6 +9,9 @@
                         <a href="">Exp_1</a>
                         <a href="">Exp_2</a>
                         <a href="">Exp_3</a>
+                        <a href="">Exp_4</a>
+                        <a href="">Exp_5</a>
+                        <a href="">Exp_6</a>
                     </div>
                 </div>
             </div>
@@ -108,17 +111,6 @@ outline: none;
     height: 100%;
 }
 
-/* button {
-    background-color: #2e814c;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    height: 100%;
-
-    border: 2px solid #2e814c;
-    border-radius: 3px;
-} */
-
 .guided-exercise-button, .free-exercise-button, .guided-exp-button, .exp-grammar-button, .solution-button {
     border: none;
     cursor: pointer;
@@ -141,6 +133,18 @@ button:hover {
     opacity: 90%;
 }
 
+.guided-exercise-button:hover, .free-exercise-button:hover, .guided-exp-button:hover, .exp-grammar-button:hover, .solution-button:hover  {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    font-size: large;
+    transition: all 0.2s;
+}
+.guided-exercise-button:active, .free-exercise-button:active, .guided-exp-button:active, .exp-grammar-button:active, .solution-button:active  {
+  transform: translateY(4px);
+  font-size: medium;
+  transition: all 0.2s;
+}
 
 .dropdown {
     height: 100%;
@@ -149,7 +153,7 @@ button:hover {
 
 .dropdown-content {
     position: absolute;
-    background-color:#297244;
+    background-color: #2e814c;
     width: 100%
 }
 
@@ -157,6 +161,9 @@ button:hover {
     display: block;
     text-decoration: none;
     padding: 10px 15px;
+}
+.dropdown a:hover {
+    background-color:#297244;
 }
 
 .input-window-wrapper {
