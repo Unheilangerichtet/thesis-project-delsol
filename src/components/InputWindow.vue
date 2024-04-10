@@ -4,7 +4,7 @@
         <div class="input-window">
             <div class="grid-item exp-grammars-box">
                 <div class="dropdown">
-                    <button @click="chooseExpGrammar()">EXAMPLE GRAMMARS</button>
+                    <button class="exp-grammar-button" @click="chooseExpGrammar()">EXAMPLE GRAMMARS</button>
                     <div class="dropdown-content" v-if="toggleDropdown">
                         <a href="">Exp_1</a>
                         <a href="">Exp_2</a>
@@ -25,7 +25,7 @@
                 </div>
             </div>
             <div class="grid-item solution-box">
-                <button>SOLUTION</button>
+                <button class="solution-button">SOLUTION</button>
             </div>
             <div class="grid-item guided-exercise-box">
                 <button class="guided-exercise-button">GUIDED EXERCISE</button>
@@ -36,9 +36,7 @@
             <div class="grid-item guided-exp-box">
                 <button class="guided-exp-button">GUIDED EXAMPLE</button>
             </div>
-            <div class="grid-item control-box-wrapper">
-                <div class="control-box"></div>
-            </div>
+            <ControlPanel class="control-panel-wrapper"></ControlPanel>
             <div class="grid-item extra-box-wrapper">
                 <div class="extra-box"></div>
             </div>
@@ -48,6 +46,8 @@
 </template>
 
 <script>
+import ControlPanel from './ControlPanel.vue'
+
 export default {
     name: 'InputWindow',
     data() {
@@ -55,6 +55,7 @@ export default {
             toggleDropdown: false
         }
     },
+    components: {ControlPanel},
     methods: {
         chooseExpGrammar() {
             if(this.toggleDropdown == false) {
@@ -100,19 +101,14 @@ outline: none;
     resize: none;
 }
 
-.grammar-box, .word-box, .control-box, .extra-box {
+.grammar-box, .word-box, .extra-box {
     background-color:#2e814c;
     border: 2px solid #2e814c;
     border-radius: 3px;
     height: 100%;
 }
 
-.control-box {
-    background-color: #4F4F4F;
-    border-color: #4F4F4F;
-}
-
-button {
+/* button {
     background-color: #2e814c;
     border: none;
     cursor: pointer;
@@ -121,16 +117,30 @@ button {
 
     border: 2px solid #2e814c;
     border-radius: 3px;
+} */
+
+.guided-exercise-button, .free-exercise-button, .guided-exp-button, .exp-grammar-button, .solution-button {
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+}
+.exp-grammar-button, .solution-button {
+    background-color: #2e814c;
+    border: 2px solid #2e814c;
+    border-radius: 3px;
+}
+
+.guided-exercise-button, .free-exercise-button, .guided-exp-button  {
+    background-color: #4F4F4F;
+    border: 2px solid #4F4F4F;
+    border-radius: 3px;
 }
 
 button:hover {
     opacity: 90%;
 }
 
-.guided-exercise-button, .free-exercise-button, .guided-exp-button  {
-    background-color: #4F4F4F;
-    border-color: #4F4F4F;
-}
 
 .dropdown {
     height: 100%;
@@ -157,6 +167,7 @@ button:hover {
     margin: 7px;
     border: 2px solid #4F4F4F;
     border-radius: 3px;
+    background-color: #F0F2E8;
 }
 
 .input-window {
@@ -206,7 +217,7 @@ button:hover {
     grid-area: 10 / 1 / -1 / 7;
 }
 
-.control-box-wrapper {
+.control-panel-wrapper {
     grid-area: 1 / 7 / 6 / -1;
 }
 
